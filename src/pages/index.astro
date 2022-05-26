@@ -1,0 +1,90 @@
+---
+import Container from "../components/container";
+import HeroPost from "../components/hero-post";
+import Intro from "../components/intro.astro";
+import Layout from "../components/layout";
+import MoreStories from "../components/more-stories";
+import { metaTagsFragment, responsiveImageFragment } from "../lib/fragments";
+
+const graphqlRequest = {
+    query: `
+      {
+        site: _site {
+          favicon: faviconMetaTags {
+            ...metaTagsFragment
+          }
+        }
+        blog {
+          seo: _seoMetaTags {
+            ...metaTagsFragment
+          }
+        }
+        allPosts(orderBy: date_DESC, first: 20) {
+          title
+          slug
+          excerpt
+          date
+          coverImage {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 2000, h: 1000 }) {
+              ...responsiveImageFragment
+            }
+          }
+          author {
+            name
+            picture {
+              responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 100, h: 100, sat: -100}) {
+                ...responsiveImageFragment
+              }
+            }
+          }
+        }
+      }
+
+      ${metaTagsFragment}
+      ${responsiveImageFragment}
+    `,
+  };
+
+	//im not handling this as a subscription, this should be anoying to hydrate using this ssg
+	//im not handling environments, this should be easy enough
+	//im not handling meta tags as well for now
+
+	const response = await fetch(
+  'https://graphql.datocms.com/',
+  {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'Authorization': `Bearer ${import.meta.env.ASTRO_EXAMPLE_CMS_DATOCMS_API_TOKEN}`,
+    },
+    body: JSON.stringify(
+      graphqlRequest
+    ),
+  }
+)
+	const parsedResponse =  await response.json()
+
+  const posts = parsedResponse.data.allPosts
+
+	const heroPost = posts.shift()
+  const morePosts = posts
+
+---
+<>
+  <Layout>
+    <Container>
+      <Intro></Intro>
+      <HeroPost  
+                title={heroPost.title}
+                coverImage={heroPost.coverImage}
+                date={heroPost.date}
+                author={heroPost.author}
+                slug={heroPost.slug}
+                excerpt={heroPost.excerpt}
+              />
+        <MoreStories posts={morePosts} />
+  
+    </Container>
+  </Layout>
+</>
