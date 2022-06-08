@@ -13,10 +13,12 @@
     "@astrojs/tailwind": "^0.2.1",
     "astro": "^1.0.0-beta.34",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react-dom": "^18.1.0",
+    "tailwindcss": "^3.0.16"
   },
   "dependencies": {
     "@datocms/cma-client-node": "^1.0.0",
+    "@tailwindcss/typography": "^0.5.2",
     "classnames": "^2.3.1",
     "date-fns": "^2.28.0",
     "react-datocms": "^3.0.12"

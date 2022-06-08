@@ -7,7 +7,7 @@ import MoreStories from "../components/more-stories";
 import { metaTagsFragment, responsiveImageFragment } from "../lib/fragments";
 
 const graphqlRequest = {
-    query: `
+  query: `
       {
         site: _site {
           favicon: faviconMetaTags {
@@ -43,13 +43,13 @@ const graphqlRequest = {
       ${metaTagsFragment}
       ${responsiveImageFragment}
     `,
-  };
+};
 
-	//im not handling this as a subscription, this should be anoying to hydrate using this ssg
-	//im not handling environments, this should be easy enough
-	//im not handling meta tags as well for now
+//im not handling this as a subscription, this should be anoying to hydrate using this ssg
+//im not handling environments, this should be easy enough
+//im not handling meta tags as well for now
 
-	const response = await fetch(
+const response = await fetch(
   'https://graphql.datocms.com/',
   {
     method: 'POST',
@@ -63,28 +63,22 @@ const graphqlRequest = {
     ),
   }
 )
-	const parsedResponse =  await response.json()
+const parsedResponse = await response.json()
 
-  const posts = parsedResponse.data.allPosts
+const posts = parsedResponse.data.allPosts
 
-	const heroPost = posts.shift()
-  const morePosts = posts
+const heroPost = posts.shift()
+const morePosts = posts
 
 ---
+
 <>
   <Layout>
     <Container>
-      <Intro></Intro>
-      <HeroPost  
-                title={heroPost.title}
-                coverImage={heroPost.coverImage}
-                date={heroPost.date}
-                author={heroPost.author}
-                slug={heroPost.slug}
-                excerpt={heroPost.excerpt}
-              />
-        <MoreStories posts={morePosts} />
-  
+      <Intro />
+      <HeroPost title={heroPost.title} coverImage={heroPost.coverImage} date={heroPost.date} author={heroPost.author}
+        slug={heroPost.slug} excerpt={heroPost.excerpt} />
+      <MoreStories posts={morePosts} />
     </Container>
   </Layout>
 </>
