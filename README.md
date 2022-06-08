@@ -31,20 +31,10 @@ In your DatoCMS' project, go to the **Settings** menu at the top and click **API
 
 Then click **Read-only API token** and copy the token.
 
-Next, copy the `.env.example` file in this directory to `.env` (which will be ignored by Git):
+Next, create the `.env` with your API token (which will be ignored by Git):
 
 ```bash
-cp .env.example .env
-```
-
-Then set each variable on `.env`:
-
-- `ASTRO_EXAMPLE_CMS_DATOCMS_API_TOKEN` should be the API token you just copied.
-
-Your `.env` file should look like this:
-
-```bash
-ASTRO_EXAMPLE_CMS_DATOCMS_API_TOKEN=...
+echo ASTRO_EXAMPLE_CMS_DATOCMS_API_TOKEN=<YOUR_API_TOKEN> >> .env
 ```
 
 #### Run your project locally
