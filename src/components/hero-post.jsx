@@ -9,7 +9,9 @@ export default function HeroPost({
   excerpt,
   author,
   slug,
+  preview
 }) {
+  const hrefLink = preview ? `/preview/posts/${slug}` : `/posts/${slug}`;
   return (
     <section>
       <div className="mb-8 md:mb-16">
@@ -22,7 +24,7 @@ export default function HeroPost({
       <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
         <div>
           <h3 className="mb-4 text-4xl lg:text-6xl leading-tight">
-            <a href={`/posts/${slug}`} className="hover:underline">
+            <a href={hrefLink} className="hover:underline">
               {title}
             </a>
           </h3>

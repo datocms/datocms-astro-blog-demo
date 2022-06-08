@@ -9,7 +9,9 @@ export default function PostPreview({
   excerpt,
   author,
   slug,
+  preview
 }) {
+  const hrefLink = preview ? `/preview/posts/${slug}` : `/posts/${slug}`;
   return (
     <div>
       <div className="mb-5">
@@ -20,7 +22,7 @@ export default function PostPreview({
         />
       </div>
       <h3 className="text-3xl mb-3 leading-snug">
-        <a href={`/posts/${slug}`} className="hover:underline">
+        <a href={hrefLink} className="hover:underline">
           {title}
         </a>
       </h3>

@@ -1,12 +1,12 @@
 ---
-import Container from "../../components/container";
-import HeaderBlog from "../../components/header-blog";
-import MoreStories from "../../components/more-stories";
-import PostHeader from "../../components/post-header";
-import PostBody from "../../components/post-body";
-import SectionSeparator from "../../components/section-separator";
-import { metaTagsFragment, responsiveImageFragment } from "../../lib/fragments";
-import Layout from "../../components/layout";
+import Container from "../../../components/container";
+import HeaderBlog from "../../../components/header-blog";
+import MoreStories from "../../../components/more-stories";
+import PostHeader from "../../../components/post-header";
+import PostBody from "../../../components/post-body";
+import SectionSeparator from "../../../components/section-separator";
+import { metaTagsFragment, responsiveImageFragment } from "../../../lib/fragments";
+import Layout from "../../../components/layout";
 
 const { slug } = Astro.params
 
@@ -109,7 +109,7 @@ const graphqlRequest = {
 
 export async function getStaticPaths() {
   const slugsResponse = await fetch(
-  'https://graphql.datocms.com/',
+  'https://graphql.datocms.com/preview',
   {
     method: 'POST',
     headers: {
@@ -134,9 +134,9 @@ for(const slug of parsedSlugResponse.data.allPosts){
 }
 ---
 
-<Layout preview={false} currentSlug={`posts/${slug}`}>
+<Layout preview={true} currentSlug={`/posts/${slug}`}>
   <Container>
-    <HeaderBlog preview={false} />
+    <HeaderBlog preview={true} />
     <article>
       <PostHeader
         title={post.title}
@@ -147,6 +147,6 @@ for(const slug of parsedSlugResponse.data.allPosts){
       <PostBody content={post.content} />
     </article>
     <SectionSeparator />
-    <MoreStories preview={false} posts={morePosts} />
+    <MoreStories preview={true} posts={morePosts} />
   </Container>
 </Layout>

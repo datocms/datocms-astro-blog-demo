@@ -1,10 +1,10 @@
 ---
-import Container from "../components/container";
-import HeroPost from "../components/hero-post";
-import Intro from "../components/intro.astro";
-import Layout from "../components/layout";
-import MoreStories from "../components/more-stories";
-import { metaTagsFragment, responsiveImageFragment } from "../lib/fragments";
+import Container from "../../components/container";
+import HeroPost from "../../components/hero-post";
+import Intro from "../../components/intro.astro";
+import Layout from "../../components/layout";
+import MoreStories from "../../components/more-stories";
+import { metaTagsFragment, responsiveImageFragment } from "../../lib/fragments";
 
 const graphqlRequest = {
   query: `
@@ -46,7 +46,7 @@ const graphqlRequest = {
 };
 
 const response = await fetch(
-  'https://graphql.datocms.com/',
+  'https://graphql.datocms.com/preview',
   {
     method: 'POST',
     headers: {
@@ -69,12 +69,12 @@ const morePosts = posts
 ---
 
 <>
-  <Layout preview={false} currentSlug={""}>
+  <Layout preview={true} currentSlug={"/"}>
     <Container>
       <Intro />
-      <HeroPost preview={false} title={heroPost.title} coverImage={heroPost.coverImage} date={heroPost.date} author={heroPost.author}
+      <HeroPost preview={true} title={heroPost.title} coverImage={heroPost.coverImage} date={heroPost.date} author={heroPost.author}
         slug={heroPost.slug} excerpt={heroPost.excerpt} />
-      <MoreStories preview={false} posts={morePosts} />
+      <MoreStories preview={true} posts={morePosts} />
     </Container>
   </Layout>
 </>
