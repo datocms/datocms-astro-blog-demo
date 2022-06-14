@@ -19,7 +19,7 @@ Have a look at the end result live:
 
 3. Let DatoCMS set everything up for you clicking this button:
 
-[![Deploy with DatoCMS](https://dashboard.datocms.com/deploy/button.svg)](https://dashboard.datocms.com/deploy?repo=datocms/nextjs-demo)
+[![Deploy with DatoCMS](https://dashboard.datocms.com/deploy/button.svg)](https://dashboard.datocms.com/projects/clone?repo=/marcelofinamorvieira/blog-astro-no-clientside-js)
 
 ### Local setup
 
