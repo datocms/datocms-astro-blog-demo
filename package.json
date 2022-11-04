@@ -17,6 +17,7 @@
     "tailwindcss": "^3.0.16"
   },
   "dependencies": {
+    "@astrojs/netlify": "^1.2.0",
     "@datocms/cma-client-node": "^1.0.0",
     "@tailwindcss/typography": "^0.5.2",
     "classnames": "^2.3.1",
