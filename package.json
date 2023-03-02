@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "echo \"ASTRO_EXAMPLE_CMS_DATOCMS_API_TOKEN=$ASTRO_EXAMPLE_CMS_DATOCMS_API_TOKEN\" && astro build",
+    "build": "astro build",
     "preview": "astro preview"
   },
   "devDependencies": {
