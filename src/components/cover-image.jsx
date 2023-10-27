@@ -1,11 +1,9 @@
 import { Image } from "react-datocms";
 import cn from "classnames";
-// import Link from "next/link";
 
 export default function CoverImage({ title, responsiveImage, slug }) {
   const image = (
     <Image
-      lazyLoad={false}
       data={{
         ...responsiveImage,
         alt: `Cover Image for ${title}`,

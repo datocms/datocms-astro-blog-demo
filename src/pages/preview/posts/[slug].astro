@@ -139,6 +139,7 @@ for(const slug of parsedSlugResponse.data.allPosts){
     <HeaderBlog preview={true} />
     <article>
       <PostHeader
+        client:visible
         title={post.title}
         coverImage={post.coverImage}
         date={post.date}
@@ -147,6 +148,6 @@ for(const slug of parsedSlugResponse.data.allPosts){
       <PostBody content={post.content} />
     </article>
     <SectionSeparator />
-    <MoreStories preview={true} posts={morePosts} />
+    <MoreStories client:visible preview={true} posts={morePosts} />
   </Container>
 </Layout>

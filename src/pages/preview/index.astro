@@ -72,9 +72,9 @@ const morePosts = posts
   <Layout preview={true} currentSlug={"/"}>
     <Container>
       <Intro />
-      <HeroPost preview={true} title={heroPost.title} coverImage={heroPost.coverImage} date={heroPost.date} author={heroPost.author}
+      <HeroPost client:visible preview={true} title={heroPost.title} coverImage={heroPost.coverImage} date={heroPost.date} author={heroPost.author}
         slug={heroPost.slug} excerpt={heroPost.excerpt} />
-      <MoreStories preview={true} posts={morePosts} />
+      <MoreStories client:visible preview={true} posts={morePosts} />
     </Container>
   </Layout>
 </>
