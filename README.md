@@ -45,3 +45,11 @@ npm run dev
 ```
 
 Your blog should be up and running on [http://localhost:3000](http://localhost:3000)!
+
+## `client:visible` directive
+
+Astro is ["Zero JS, by default: No JavaScript runtime overhead to slow you down"](https://docs.astro.build/en/getting-started/). That means that by default Astro generates static files server-side and no JS is sent to the client, unless strictly needed.
+
+When using the `<Image />` component, or any other component that requires some client-side orchestration, you must instruct Astro to send the component bundle to the client, so that the interactive features can be made available to the user. Astro uses [_directives_](https://docs.astro.build/en/reference/directives-reference/#client-directives): `client:visible` loads and hydrates the component once the component has entered the user’s viewport.
+
+In this demo, we use the `client:visible` directive to enable the lazy load of images, that are actually loaded only when they enter the viewport.
