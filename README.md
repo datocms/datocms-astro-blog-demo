@@ -17,7 +17,7 @@ The purpose of this repo is to have a quick start reference that can be set up w
 
 Have a look at the end result live:
 
-### [https://blog-astro-no-clientside-js.vercel.app/](https://blog-astro-no-clientside-js.vercel.app/)
+### [https://bucolic-naiad-aa13d8.netlify.app/](https://bucolic-naiad-aa13d8.netlify.app/)
 
 ## How to use
 

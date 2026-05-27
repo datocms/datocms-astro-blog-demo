@@ -5,7 +5,7 @@
   "datocmsProjectId": "73607",
   "deploymentType": "static",
   "buildCommand": "npm run build",
-  "livePreviewUrl": "https://blog-astro-no-clientside-js.vercel.app/",
+  "livePreviewUrl": "https://bucolic-naiad-aa13d8.netlify.app/",
   "environmentVariables": {
     "DATOCMS_PUBLISHED_CONTENT_CDA_TOKEN": {
       "type": "datocmsAccessToken",
