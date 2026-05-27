@@ -94,7 +94,7 @@ const graphqlRequest = {
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
-      'Authorization': `Bearer ${import.meta.env.ASTRO_EXAMPLE_CMS_DATOCMS_API_TOKEN}`,
+      'Authorization': `Bearer ${import.meta.env.DATOCMS_PUBLISHED_CONTENT_CDA_TOKEN}`,
     },
     body: JSON.stringify(
       graphqlRequest
@@ -115,7 +115,7 @@ export async function getStaticPaths() {
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
-      'Authorization': `Bearer ${import.meta.env.ASTRO_EXAMPLE_CMS_DATOCMS_API_TOKEN}`,
+      'Authorization': `Bearer ${import.meta.env.DATOCMS_PUBLISHED_CONTENT_CDA_TOKEN}`,
     },
     body: JSON.stringify(
       {query: `{allPosts {

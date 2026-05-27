@@ -39,13 +39,15 @@ Once the setup of the project and repo is done, clone the repo locally.
 
 In your DatoCMS' project, go to the **Settings** menu at the top and click **API tokens**.
 
-Then click **Read-only API token** and copy the token.
+Create two DatoCMS API tokens: `CDA Only (Published)` for published content and `CDA Only (Draft)` for preview content.
 
-Next, create the `.env` with your API token (which will be ignored by Git):
+Next, copy the `.env.example` file in this directory to `.env` (which will be ignored by Git):
 
 ```bash
-echo ASTRO_EXAMPLE_CMS_DATOCMS_API_TOKEN=<YOUR_API_TOKEN> >> .env
+cp .env.example .env
 ```
+
+Then set `DATOCMS_PUBLISHED_CONTENT_CDA_TOKEN` and `DATOCMS_DRAFT_CONTENT_CDA_TOKEN` in `.env`.
 
 #### Run your project locally
 

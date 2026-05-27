@@ -5,6 +5,15 @@
   "datocmsProjectId": "73607",
   "deploymentType": "static",
   "buildCommand": "npm run build",
-  "datocmsApiTokenEnvName": "ASTRO_EXAMPLE_CMS_DATOCMS_API_TOKEN",
-  "livePreviewUrl": "https://blog-astro-no-clientside-js.vercel.app/"
+  "livePreviewUrl": "https://blog-astro-no-clientside-js.vercel.app/",
+  "environmentVariables": {
+    "DATOCMS_PUBLISHED_CONTENT_CDA_TOKEN": {
+      "type": "datocmsAccessToken",
+      "tokenName": "CDA Only (Published)"
+    },
+    "DATOCMS_DRAFT_CONTENT_CDA_TOKEN": {
+      "type": "datocmsAccessToken",
+      "tokenName": "CDA Only (Draft)"
+    }
+  }
 }

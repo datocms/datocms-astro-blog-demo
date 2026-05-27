@@ -52,7 +52,7 @@ const response = await fetch(
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
-      'Authorization': `Bearer ${import.meta.env.ASTRO_EXAMPLE_CMS_DATOCMS_API_TOKEN}`,
+      'Authorization': `Bearer ${import.meta.env.DATOCMS_DRAFT_CONTENT_CDA_TOKEN}`,
     },
     body: JSON.stringify(
       graphqlRequest
